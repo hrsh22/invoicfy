@@ -423,7 +423,7 @@ function validateFormValues(
   tokenRoutes: RoutesMap,
   balances: AppState['balances'],
 ) {
-  const { originCaip2Id, destinationCaip2Id, amount, tokenCaip19Id, recipientAddress } = values;
+  const { originCaip2Id, destinationCaip2Id, tokenCaip19Id, recipientAddress } = values;
   const route = getTokenRoute(originCaip2Id, destinationCaip2Id, tokenCaip19Id, tokenRoutes);
   if (!route) return { destinationCaip2Id: 'No route found for chains/token' };
 
@@ -434,7 +434,7 @@ function validateFormValues(
   const { address: tokenAddress } = parseCaip19Id(tokenCaip19Id);
   if (!isValidAddress(tokenAddress)) return { tokenCaip19Id: 'Invalid token' };
 
-  const destProtocol = getProtocolType(destinationCaip2Id);
+  // const destProtocol = getProtocolType(destinationCaip2Id);
   // if (!isValidAddress(recipientAddress, destProtocol))
   //   return { recipientAddress: 'Invalid recipient' };
 
