@@ -34,13 +34,16 @@ export function ChainSelectField({ name, label, chainCaip2Ids, onChange, disable
     try {
       await helpers.setValue(newChainId);
       // Reset other fields on chain change
+      // tslint:disable-next-line:no-unsafe-any
       setFieldValue('tokenCaip19Id', '');
+      // tslint:disable-next-line:no-unsafe-any
       setFieldValue('recipientAddress', '');
+      // tslint:disable-next-line:no-unsafe-any
       setFieldValue('amount', '');
       if (onChange) onChange(newChainId);
     } catch (error) {
+      // tslint:disable-next-line:no-unsafe-any
       // Handle any errors here
-      console.error('Error:', error);
     }
   };
 

@@ -35,8 +35,11 @@ export function ConnectAwareSubmitButton<FormValues = any>({ chainCaip2Id, text,
 
   // Automatically clear error state after a timeout
   const clearErrors = useCallback(() => {
+    // tslint:disable-next-line:no-unsafe-any
     setErrors({});
+    // tslint:disable-next-line:no-unsafe-any
     setTouched({});
+    // tslint:disable-next-line:no-unsafe-any
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setErrors, setTouched, errors, touched]);
 

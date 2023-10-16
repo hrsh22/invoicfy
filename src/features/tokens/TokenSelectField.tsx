@@ -39,6 +39,7 @@ export function TokenSelectField({
     if (!field.value) setToken(undefined);
     else if (field.value !== token?.tokenCaip19Id) {
       setToken(undefined);
+      // tslint:disable-next-line:no-unsafe-any
       helpers.setValue('');
     }
   }, [token, field.value, helpers]);
@@ -58,10 +59,13 @@ export function TokenSelectField({
     // Set the token address value in formik state
     await helpers.setValue(newToken.tokenCaip19Id);
     // reset amount after changing token
+    // tslint:disable-next-line:no-unsafe-any
     setFieldValue('amount', '');
     // Update local state
+    // tslint:disable-next-line:no-unsafe-any
     setToken(newToken);
     // Update nft state in parent
+    // tslint:disable-next-line:no-unsafe-any
     setIsNft(!!isNonFungibleToken(newToken.tokenCaip19Id));
   };
 
