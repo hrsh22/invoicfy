@@ -11,7 +11,7 @@ function Section3() {
         <div className="flex flex-col justify-center items-start overflow-hidden">
           <div className="font-gloock text-3xl py-5">Fast & Easy Cross-Chain Token Payments</div>
           <div className="font-golos">
-            Simply pay using your preferred ERC20 tokens, no matter which chain they're from. We'll
+            Simply pay using your preferred ERC20 tokens, no matter which chain they&apos;re from. We&apos;ll
             take care of the cross-chain transactions.
           </div>
         </div>

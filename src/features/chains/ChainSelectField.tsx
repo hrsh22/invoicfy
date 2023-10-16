@@ -21,13 +21,27 @@ export function ChainSelectField({ name, label, chainCaip2Ids, onChange, disable
   const [field, , helpers] = useField<ChainCaip2Id>(name);
   const { setFieldValue } = useFormikContext<TransferFormValues>();
 
-  const handleChange = (newChainId: ChainCaip2Id) => {
-    helpers.setValue(newChainId);
-    // Reset other fields on chain change
-    setFieldValue('tokenCaip19Id', '');
-    setFieldValue('recipientAddress', '');
-    setFieldValue('amount', '');
-    if (onChange) onChange(newChainId);
+  // const handleChange = (newChainId: ChainCaip2Id) => {
+  //   helpers.setValue(newChainId);
+  //   // Reset other fields on chain change
+  //   setFieldValue('tokenCaip19Id', '');
+  //   setFieldValue('recipientAddress', '');
+  //   setFieldValue('amount', '');
+  //   if (onChange) onChange(newChainId);
+  // };
+
+  const handleChange = async (newChainId: ChainCaip2Id) => {
+    try {
+      await helpers.setValue(newChainId);
+      // Reset other fields on chain change
+      setFieldValue('tokenCaip19Id', '');
+      setFieldValue('recipientAddress', '');
+      setFieldValue('amount', '');
+      if (onChange) onChange(newChainId);
+    } catch (error) {
+      // Handle any errors here
+      console.error('Error:', error);
+    }
   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);

@@ -43,10 +43,21 @@ export function TokenSelectField({
     }
   }, [token, field.value, helpers]);
 
-  const handleChange = (newToken: TokenMetadata) => {
+  // const handleChange = (newToken: TokenMetadata) => {
+  //   // Set the token address value in formik state
+  //   helpers.setValue(newToken.tokenCaip19Id);
+  //   // reset amount after change token
+  //   setFieldValue('amount', '');
+  //   // Update local state
+  //   setToken(newToken);
+  //   // Update nft state in parent
+  //   setIsNft(!!isNonFungibleToken(newToken.tokenCaip19Id));
+  // };
+
+  const handleChange = async (newToken: TokenMetadata) => {
     // Set the token address value in formik state
-    helpers.setValue(newToken.tokenCaip19Id);
-    // reset amount after change token
+    await helpers.setValue(newToken.tokenCaip19Id);
+    // reset amount after changing token
     setFieldValue('amount', '');
     // Update local state
     setToken(newToken);

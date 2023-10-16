@@ -7,7 +7,7 @@ function Section4() {
   return (
     <div className="flex flex-col items-start bg-[#E7ECEF] py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-32 text-[#274C77]">
       <div className="font-gloock mb-8 text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-left py-2">
-        Convinced you need a taste of Invoicify's crypto magic? Take the leap and create your first
+        Convinced you need a taste of Invoicify&apos;s crypto magic? Take the leap and create your first
         NFT invoice now!
       </div>
       <button
